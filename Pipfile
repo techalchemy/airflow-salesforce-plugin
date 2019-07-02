@@ -9,7 +9,7 @@ verify_ssl = true
 airflow-salesforce-plugin = {editable = true,path = ".", extras = ["tests", "dev", "csvfiles", "docs"]}
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
 
 [pipenv]
 allow_prereleases = true
