@@ -1,0 +1,35 @@
+SELECT
+   id
+  ,accountnumber
+  ,billingcity
+  ,billingcountry
+  ,billingpostalcode
+  ,billingstate
+  ,billingstreet
+  ,createdbyid
+  ,createddate
+  ,fax
+  ,iscustomerportal
+  ,isdeleted
+  ,ispartner
+  ,lastmodifiedbyid
+  ,lastmodifieddate
+  ,name
+  ,phone
+  ,recordtypeid
+  ,sales_person__c
+  ,shippingcity
+  ,shippingcountry
+  ,shippingpostalcode
+  ,shippingstate
+  ,shippingstreet
+  ,solution_type__c
+  ,source_erp__c
+  ,systemmodstamp
+  ,type
+  ,parentid
+FROM
+  Account
+WHERE
+  ((systemmodstamp >= %s AND systemmodstamp <= %s) OR isdeleted = TRUE)
+  AND (source_erp__c = NULL OR source_erp__c != 'SAP')
