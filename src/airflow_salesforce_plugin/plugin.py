@@ -1,10 +1,9 @@
 from typing import List
 
 from airflow.plugins_manager import AirflowPlugin
-from airflow.utils.log.logging_mixin import LoggingMixin
 
-from .hooks import SalesforceHook
-from .operators import (
+from airflow_salesforce_plugin.hooks.salesforce_hook import SalesforceHook
+from airflow_salesforce_plugin.operators import (
     SalesforceAttachmentToS3Operator,
     SalesforceToFileOperator,
     SalesforceToS3Operator,
