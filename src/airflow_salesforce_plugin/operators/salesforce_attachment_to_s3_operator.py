@@ -44,6 +44,7 @@ class SalesforceAttachmentToS3Operator(BaseOperator):
         upload_timeout: int = 15,
         concurrent_uploads: int = 5,
         api_version: str = "v38.0",
+        provide_context: bool = False,
         *args,
         **kwargs,
     ) -> None:
@@ -61,6 +62,7 @@ class SalesforceAttachmentToS3Operator(BaseOperator):
         :param upload_timeout: Upload timeout, default 15
         :type upload_timeout: int
         :param concurrent_uploads: Number of concurrent uploads to perform, default 15
+        :param bool provide_context: Whether to include context, default False
         :type concurrent_uploads: int
         :param str api_version: The salesforce API version to use, defaults to v38.0
         """
@@ -74,6 +76,7 @@ class SalesforceAttachmentToS3Operator(BaseOperator):
         self.upload_timeout = upload_timeout
         self.concurrent_uploads = concurrent_uploads
         self.api_version = api_version
+        self.provide_context = provide_context
 
     def execute(self, context: Dict[str, Any]) -> List[str]:
         """
